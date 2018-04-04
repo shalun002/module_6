@@ -55,7 +55,28 @@ namespace KKB.Bank.Module
         public string Password { get; set; }
         public string PhoneNumber { get; set; }
 
-       public List<Account> ListAccount;
+        public List<Account> ListAccount;
+
+        public bool isBlocked { get; set; } = false;
+        private int WrongField_;
+        public int WrongField
+        {
+            get
+            {
+                return WrongField_;
+            }
+
+            set
+            {
+                if (value >= 3)
+                {
+                    isBlocked = true;
+                    
+                }
+                WrongField_ = value;
+
+            }
+        }
 
         public void ClientInfoPrint()
         {
@@ -64,6 +85,9 @@ namespace KKB.Bank.Module
 
         public void PrintAccountInfo()
         {
+            double sum = 0;
+            Console.WriteLine("Список счетов: ");
+            Console.WriteLine("==========================================================");
             foreach (Account item in ListAccount)
             {
                 Console.WriteLine("==========================================================");
@@ -73,7 +97,9 @@ namespace KKB.Bank.Module
                 Console.WriteLine("Доступный баланс:  {0}", item.Balance);
                 Console.WriteLine();
                 Console.WriteLine("==========================================================");
+                sum += item.Balance;
             }
+            Console.WriteLine("Итого сумма на счетах: {0:n0}", sum);
         }
 
     }
