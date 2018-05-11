@@ -35,7 +35,7 @@ namespace Bankomat
             acc.Balance = double.Parse(rand.Next(1000, 9999).ToString());
             acc.CreateDate = DateTime.Now.AddMonths(-rand.Next(1, 56));
 
-            return acc;       
+            return acc;
         }
     }
 }
