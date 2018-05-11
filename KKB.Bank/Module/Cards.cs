@@ -20,10 +20,7 @@ namespace KKB.Bank.Module
             cn[1] = "****";
             cn[2] = "****";
 
-            return string.Format("{0} {1} {2} {3}", cn[0], cn[1], cn[2], cn[3]);
-        
-        }
-        
-        
+            return string.Format("{0} {1} {2} {3}", cn[0], cn[1], cn[2], cn[3]);        
+        }        
     }
 }

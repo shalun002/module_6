@@ -27,9 +27,9 @@ namespace Bankomat
                     #region
 
                     Console.Clear();
-                    Console.Write("введите логин:");
+                    Console.Write("Введите логин: ");
                     login = Console.ReadLine();
-                    Console.Write("введите пароль:");
+                    Console.Write("Введите пароль: ");
                     password = Console.ReadLine();
 
                     if (login != client.Login && password != client.Password)
